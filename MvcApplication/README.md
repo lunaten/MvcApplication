@@ -57,41 +57,41 @@ using System.Data.Entity;
 
 namespace MvcApplication.Models
 {
-	//継承の追加
-	/*
-	DropCreateDatabaseIfNotExits<TContext>    ：データベースが存在しないとき
-	DropCreateDatabaseAlways<TContext>        ：アプリケーション実行時に常に
-	DropCreateDatabaseIfModelChanges<TContext>：モデルが変更されたとき
-	*/
-	public class MvcBasicInitializer : DropCreateDatabaseAlways<MvcBasicContext>
-	{
-		protected override void Seed(MvcBasicContext context)
-		{
-			var members = new List<Member>
-			{
-				new Member
-				{
-					Name = "田中太郎",
-					Email = "aaa@bbb.ccc,",
-					Birth = DateTime.Parse("1900.01.01"),
-					Married = true,
-					Memo = "運動が好きです。"
-				},
-				new Member
-				{
-					Name = "田中花子",
-					Email = "aaa@bbb.ccc,",
-					Birth = DateTime.Parse("1900.09.01"),
-					Married = true,
-					Memo = "チョコが好きです。"
-				}
-			};
+    //継承の追加
+    /*
+    DropCreateDatabaseIfNotExits<TContext>    ：データベースが存在しないとき
+    DropCreateDatabaseAlways<TContext>        ：アプリケーション実行時に常に
+    DropCreateDatabaseIfModelChanges<TContext>：モデルが変更されたとき
+    */
+    public class MvcBasicInitializer : DropCreateDatabaseAlways<MvcBasicContext>
+    {
+        protected override void Seed(MvcBasicContext context)
+        {
+            var members = new List<Member>
+            {
+                new Member
+                {
+                    Name = "Bob",
+                    Email = "bob@axd.jp,",
+                    Birth = DateTime.Parse("1900.01.01"),
+                    Married = 1,
+                    Memo = "I like sports."
+                },
+                new Member
+                {
+                    Name = "Carry",
+                    Email = "carry@axd.jp,",
+                    Birth = DateTime.Parse("1900.09.01"),
+                    Married = 1,
+                    Memo = "I like chocolate."
+                }
+            };
 
-			//コンテキストの保存
-			members.ForEach(m => context.Members.Add(m));
-			context.SaveChanges();
-		}
-	}
+            //コンテキストの保存
+            members.ForEach(m => context.Members.Add(m));
+            context.SaveChanges();
+        }
+    }
 }
 ```
  5. イニシャライザーを登録する  
