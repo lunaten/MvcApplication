@@ -14,7 +14,13 @@ namespace MvcApplication
     {
         protected void Application_Start()
         {
-            //DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
+            /*
+             * DbConfigurationTypeについて
+             * Web.ConfigまたはMvcBasicContextで設定すると
+             * Scaffoldingでエラーが発生するため、Global.asaxへ変更。
+             * 設定後はMvcApplication.dllを再作成したいためリビルド必須！！！
+             */
+            DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

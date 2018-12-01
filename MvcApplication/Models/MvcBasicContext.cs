@@ -6,14 +6,8 @@ using System.Data.Entity;
 using MySql.Data.Entity;
 namespace MvcApplication.Models
 {
-    /*
-     * DbContextを継承する（要System.Data.SqlClientの参照追加）
-     * 
-     * DbConfigurationTypeについて：
-     * Web.Configに設定してたが、Scaffoldingでエラーが発生するため、
-     * MvcBasicContextへ設定中。Global.asaxの設定でも問題ない。
-     */
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
+    //Global.asax以外での設定は非推奨のためコメントアウト
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
 
     public class MvcBasicContext : DbContext
     {
