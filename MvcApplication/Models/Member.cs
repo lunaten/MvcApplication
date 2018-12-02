@@ -21,5 +21,8 @@ namespace MvcApplication.Models
 
         [DisplayName("自己紹介")]
         public string Memo { get; set; }
+
+        [DisplayName("フィールド追加")]
+        public string NewField { get; set; }
     }
 }
