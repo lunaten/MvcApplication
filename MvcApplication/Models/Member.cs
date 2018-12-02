@@ -11,7 +11,7 @@ namespace MvcApplication.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime Birth { get; set; }
-        public int Married { get; set; }
+        public bool Married { get; set; }
         public string Memo { get; set; }
     }
 }

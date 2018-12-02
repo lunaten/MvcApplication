@@ -19,17 +19,17 @@ namespace MvcApplication.Models
                 new Member
                 {
                     Name = "Bob",
-                    Email = "bob@axd.jp,",
+                    Email = "bob@axd.jp",
                     Birth = DateTime.Parse("1900.01.01"),
-                    Married = 1,
+                    Married = true,
                     Memo = "I like sports."
                 },
                 new Member
                 {
                     Name = "Carry",
-                    Email = "carry@axd.jp,",
+                    Email = "carry@axd.jp",
                     Birth = DateTime.Parse("1900.09.01"),
-                    Married = 1,
+                    Married = true,
                     Memo = "I like chocolate."
                 }
             };
